@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 1 Year!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(to bottom right, #d47fa6, #1c0f1c);
+      font-family: 'Quicksand', sans-serif;
+      color: white;
+    }
+
+    .card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: black;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      width: 400px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+      font-family: 'Pacifico', cursive;
+      z-index: 2;
+    }
+
+    .card h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .corner {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .top-left img {
+      width: 200px;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .bottom-right img {
+      height: 600px;
+      width: auto;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .text-card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px 28px;
+      border-radius: 25px;
+      backdrop-filter: blur(6px);
+      color: white;
+      font-size: 36px;
+      font-family: 'Pacifico', cursive;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .top-left {
+      top: 20px;
+      left: 20px;
+    }
+
+    .top-right {
+      top: 40px;
+      right: 40px;
+    }
+
+    .bottom-left {
+      bottom: 60px;
+      left: 40px;
+    }
+
+    .bottom-right {
+      bottom: 30px;
+      right: 30px;
+    }
+
+    #music-btn {
+      position: fixed;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: hotpink;
+      color: white;
+      border: none;
+      padding: 20px 40px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 36px;
+      font-family: 'Quicksand', sans-serif;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.8);
+      transition: background-color 0.3s ease;
+      z-index: 9999;
+    }
+
+    #music-btn:hover {
+      background-color: #ff4c9e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Left - Hello Kitty GIF -->
+  <div class="corner top-left">
+    <img src="44307eb4a120068376a9997215ae85f3.gif" alt="Hello Kitty GIF">
+  </div>
+
+  <!-- Top Right - Text Card -->
+  <div class="corner top-right">
+    <div class="text-card">A + T = ♾️</div>
+  </div>
+
+  <!-- Bottom Left - Text Card -->
+  <div class="corner bottom-left">
+    <div class="text-card">1 year with my babyy!!!</div>
+  </div>
+
+  <!-- Bottom Right - GF Photo -->
+  <div class="corner bottom-right">
+    <img src="IMG_3970.webp" alt="GF Photo">
+  </div>
+
+  <!-- Center Card -->
+  <div class="card">
+    <h1>HAPPYYY 1 YEARRR<br>ANNIVERSARY BABYYY</h1>
+    <p>💗</p>
+    <p>I hope you love this :3.<br>Click this to read your anniversary paragraph! 💖</p>
+    <button onclick="window.location.href='paragraph.html'">Click me</button>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="bg-music" loop>
+    <source src="die-for-me.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music Button -->
+  <button id="music-btn">🎵</button>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-btn');
+    let isPlaying = false;
+
+    musicBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        musicBtn.textContent = '🎵';
+      } else {
+        audio.play();
+        musicBtn.textContent = '⏸️';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+
+  <script src="hearts.js"></script>
+</body>
+</html>
